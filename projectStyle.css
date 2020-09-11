@@ -1,0 +1,112 @@
+html{
+		width:100%; height:100%; 
+		/*background-color: #edeaff;*/
+	}
+	body{
+		background-color: white;
+		margin:0;
+	    padding:0;
+	    height:100%;
+	    width: 100%;
+	    display: block;
+	    font-family: 'Catamaran', sans-serif;
+	}
+	
+	/* unvisited link */
+	a:link {
+	  color: purple;
+	}
+
+	/* visited link */
+	a:visited {
+	  color: purple;
+	}
+
+
+	.title{
+		width:80%; 
+		display: inline-block; 
+		font-size: 50px; 
+		margin: 70px 0 50px 10%; 
+		font-weight: 600; 
+		line-height: 1.2; 
+		background-color: white;
+	}
+
+	.client{
+		font-size: 30px; font-weight: 400; padding-top: 10px;
+	}
+
+
+
+	#workGrid{
+		display: grid;
+		height:550px;
+		padding: 0 10%;
+		grid-gap: 10px;
+		grid-row-gap: 70px;
+		grid-column-gap: 20px;
+		grid-template-columns: auto auto;
+		/*align-items: end;*/
+	}
+	#workGrid>div{
+		align-self:center;
+	}
+
+	#workGrid>div>img{
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+
+	.projectPara{
+		font-size: 22px;
+		line-height: 1.4;
+		margin:50px;
+		background-color: white;
+	}
+	.mainPara{
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.5;
+		margin:50px;
+	}
+	
+
+	.projectArea{
+		position: absolute; bottom:10px; left:10px; font-size: 20px;
+	}
+	.profileTile{
+		height:50px;
+		width:50px;
+		margin: 0 0 10px 10px;
+		background-color:;
+		display: inline-block;
+		
+		position: relative;
+		text-align: center;
+		font-family: 'Nanum Pen Script', cursive;
+		font-size: 30px;
+		vertical-align: text-top;
+	}
+	.profileTile>img{
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+		border-radius: 50%;
+		margin-top: 10px;
+	}
+
+	#projectTopics{
+		margin-left: 10%; 
+		width:90%;
+		margin-bottom: 30px;
+	}
+
+	#projectTopics>div{
+		font-size: 20px;
+		display: inline-block;
+		margin-right: 70px;
+		font-weight: 200;
+	}

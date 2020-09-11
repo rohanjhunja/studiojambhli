@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Sora&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans&family=Sora&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@200;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="projectStyle.css">
+</head>
+
+<body>
+
+	<div class="title">50 years alumni exhbitiion<div class="client">IDC IIT Bombay</div></div> 
+	
+
+		<div id="workGrid">
+
+
+		<div id="para1" class="projectPara mainPara" style="width: 300px; margin:0;">IDC 50 was a celebration of one of India’s premier design schools, Industrial Design Center. This was held in January 2020 with a gathering of the alumni, faculty and staff of over 50 years coming together. </div>
+
+		<div id="image1" style="height:330px; width:330px;"><img src="images/idc1.jpg"></div>
+
+		<div id="image4" style="height:300px; display: flex; object-fit: scale-down; grid-column: 1 / span 2;" ><img src="images/idc4.jpg" style="width: 31%; margin: 0 5px 0 0;"><img src="images/idc7.jpg" style="width: 31%; margin: 0 5px;"><img src="images/idc8.jpg" style="width: 31%; margin: 0 0 0 5px;"></div>
+
+		<div id="para2" class="projectPara" style="grid-column: 1/span 2; margin-top:0; margin-left:0;">Alumni contributed in a variety of ways, one of which was a year long set of posts that explored what design meant to a practicing designer. The content was curated and developed at Studio Jambhli.</div>
+
+		<div id="image3" style="height:300px; grid-column: 1 / span 2;" ><img src="images/idc01.jpg" style="object-fit: scale-down;"></div>
+
+		<div class="projectPara" style="grid-column: 1/span 2; margin-top:0; margin-left:0;">This was displayed through instaposts and later developed into a poster that was part of the exhibition.<br><br>Design Team- Marion and Isha</div>
+
+
+		<div id="image2" style="height:330px; width:330px; object-fit: contain;"><img src="images/idc3.jpg"style="width:100%; height: auto; margin-bottom: 0px; vertical-align: top;"></div>
+		
+
+		<div id="para4" class="projectPara" style="width: 250px;">This was developed into a set of talks by the same alumni, who shared their experiences. Studio Jambhli was involved in helping organise this as one of the events. </div>
+
+		
+
+		<div id="para3" class="projectPara" style="grid-column: 1/span 2; margin-top:0; margin-left:0;">An exhibition of over 40 practicing entrepreneurs from the institute was also curated and was developed into an exhibition, held at IDC, IIT Mumbai, this showcased a section of alumni who have become entrepreneurs and have design firms that cover various design streams. <br><br>Design team- Marion, Swati, all the contributors to the various panels- Chinmay, Norbu, Gauri, Rohan, Deepika. </div>
+
+		<div id="image4" style="height:300px; display: flex; object-fit: scale-down; grid-column: 1 / span 2;"><img src="images/idc0.jpg"></div>
+
+		<div style="margin:0 0 50px 0;"> <div class="profileTile" style=""><img src="images/profile.jpg"></div><div class="profileTile" style=""><img src="images/profile1.png"></div><div class="profileTile" style=""><img src="images/profile6.jpg"></div><div class="profileTile" style=""><img src="images/profile5.jpg"></div><div class="profileTile" style=""><img src="images/profile4.png"></div></div>
+
+			<!-- <div style="margin:20px 0 50px 0; cursor: pointer;"><div class="projectPara" onclick="function nextProject(){location.href = 'food.html';} nextProject();">next project:<br>nutrition game kit</div></div> -->
+
+			<div style="margin:20px 0 50px 0; cursor: pointer;"><div class="projectPara">further projects in progress</div></div>
+
+		</div>
+
+
+		
+	
+</body>
+<script type="text/javascript">
+	var lelem =document.getElementById("image1");
+	var hl0=100;
+	function collapse(e){
+		var elem=document.getElementById(e);
+		if(elem!=lelem){
+
+		elem.style.gridsRowStart=1;
+		lelem.style.gridRowStart=2;
+		console.log(elem.style.gridsRowStart);
+			
+		document.getElementById(lelem.id.replace('image','para')).style.display = "none";
+		document.getElementById(lelem.id.replace('image','para')).style.opacity = 0;
+		document.getElementById(elem.id.replace('image','para')).style.display = "block";
+		document.getElementById(elem.id.replace('image','col')).style.alignSelf = "end";
+
+
+		var h= Number(document.getElementById(e).style.height.replace('px',''));
+		var w= Number(document.getElementById(e).style.width.replace('px',''));
+		var hl= Number(lelem.style.height.replace('px',''));
+		var wl= Number(lelem.style.width.replace('px',''));
+		
+		var h0=h;
+		console.log(elem.id);
+		
+  		var id1 = setInterval(frame2, 10);
+  		var id2 = setInterval(frame1, 10);
+		  
+		  function frame2() {
+		    if (h>=550) {
+		      clearInterval(id1);
+		      document.getElementById(elem.id.replace('image','col')).style.alignSelf = "start";
+		      lelem=elem;
+		    } else {
+		      h=h*1.1; 
+		      w=w*1.1; 
+		      elem.style.width = w+ 'px'; 
+		      elem.style.height = h+ 'px';
+		      document.getElementById(elem.id.replace('image','para')).style.opacity=h/550; 
+		    }
+		  }
+		  function frame1() {
+		    if (hl<=hl0) {
+		      clearInterval(id2);
+		    } else {
+		      hl=hl*0.9; 
+		      wl=wl*0.9; 
+		      lelem.style.width = wl+ 'px'; 
+		      lelem.style.height = hl+ 'px'; 
+		    }
+		  }
+	}}
+</script>
+
+</html>
