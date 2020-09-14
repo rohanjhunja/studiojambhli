@@ -526,7 +526,7 @@
 	}}
 
 	function scrollFunction() {
-	  if (document.getElementById("container").scrollTop > 50 || document.documentElement.scrollTop > 50) {
+	  if (document.getElementById("container").pageYOffset > 50 || document.documentElement.pageYOffset > 50) {
 	    document.getElementById("title").style.fontSize = "35px";
 	    document.getElementById("title").style.marginTop = "5px";
 	    document.getElementById("titlebar").style.paddingTop = "10px";
