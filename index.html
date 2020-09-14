@@ -6,7 +6,9 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans&family=Sora&display=swap" rel="stylesheet">
 </head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style type="text/css">
 	html{
 		width:100%; height:100%; 
@@ -22,12 +24,12 @@
 	    font-family: 'Noto Serif', sans-serif;
 	    overflow: hidden;
 
-	    -webkit-touch-callout: none;
+	    /*-webkit-touch-callout: none;
 		-webkit-user-select: none;
 		-khtml-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
-		user-select: none;
+		user-select: none;*/
 
 		cursor: default;
 	    /*scroll-snap-type: y mandatory;*/
@@ -45,7 +47,7 @@
 	p{
 		display: inline;
 		color: #8357db;
-		font-size: 50px;
+		font-size: 10vw;
 		line-height: 1;
 	}
 
@@ -61,7 +63,8 @@
 	    width: 100%;
 	    display: block;
 	    font-family: 'Noto Serif', sans-serif;
-		overflow: scroll;
+		overflow-y: scroll;
+		overflow-x:hidden;
 		scroll-snap-type: y mandatory;
 	}
 
@@ -92,9 +95,10 @@
 		text-align: left;
 		font-family: 'Sora', sans-serif;
 		padding-left: 10%;
-		font-size: 130px;
+		font-size: 18vw;
 		line-height: 1;
 		margin-top:100px;
+		z-index: 5;
 		transition: 0.5s;
 	}
 
@@ -114,6 +118,7 @@
 		min-height:100%;
 		background-color: #fcfcfa;
 		z-index: 1;
+		padding-bottom:40%;
 		scroll-snap-align: start;
   		scroll-snap-stop: normal;
 	}
@@ -122,7 +127,8 @@
 	}
 	#introPara{
 		
-		font-size: 30px;
+		font-size: 7vw;
+		line-height: 1.5;
 		
 	}
 	.nextPage{
@@ -139,13 +145,15 @@
 	}
 	.heading{
 		padding: 7% 0 30px 10% ;
-		font-size: 70px;
+		font-size: 12vw;
 	}
 	.workGrid{
 		display: flex;
 		padding: 0 10%;
 		margin-bottom: 120px;
 	}
+
+	
 
 	.projectTileCO{
 		position: relative;
@@ -159,6 +167,32 @@
   		scroll-behavior: smooth;
 	}
 
+
+
+
+
+	.projectGrid>img{
+		height:50vw;
+		width: 50vw;
+		overflow: hidden;
+		object-fit: cover;
+		border-radius: 25vw;
+	}
+
+	.projectGrid>div{
+		border-radius: 25vw;
+		border:solid;
+		border-width: 1px;
+		border-color: lightgrey;
+		/*background-color: black;
+		color: white;*/
+		font-size: 5vw;
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		text-align: center;
+	}
+
 	.projectTile{
 		display: inline-block;
 		height:600px;
@@ -170,11 +204,8 @@
 		overflow: hidden;
 	}
 	.projectPara{
-		font-size: 30px;
-		height:150px;
-		width:600px;
-		margin: 0 20px 20px 0;
-		padding:50px 75px;
+		font-size: 6vw;
+		padding:5vw 10vw;
 		vertical-align: top;
 		
 	}
@@ -243,7 +274,7 @@
 
 	#profileGrid>div{
 		width:250px;
-		margin: 0 150px 50px 0;
+		margin: 0 10vw 10vw 0;
 		background-color:#fcfcfa;
 		display: inline-block;
 		line-height: 1.8;
@@ -281,6 +312,7 @@
 	.projectLink>img{
 		opacity:0.2;
 		transition: all .8s ease-in-out;
+		display: none;
 	}
 
 	.projectLink:hover{
@@ -292,26 +324,29 @@
 		opacity: 1;
 		cursor:pointer;
 	}
-
-	.projectGrid>img{
-		height:200px;
-		width: 200px;
-		overflow: hidden;
-		object-fit: cover;
-		border-radius: 100px;
-	}
 	
 	.projectLink1{
 		filter: brightness(100%);
 		cursor:pointer;
 		transition: all .5s ease-in-out;
-		text-decoration: underline;
-		text-decoration-color: #e0d5f6;
-		margin: 20px 0;
+		margin: 5px;
+		padding:5px 10px;
+		border:solid;
+		border-width: 1px;
+		border-color: lightgrey;
+		width: max-content;
+		display: inline-block;
+		/*border-radius: 10px;*/
 	}
+
+	.projectLink1>p{
+		font-size: 7vw;
+	}
+
 	.projectLink1>img{
 		opacity:0.2;
 		transition: all .8s ease-in-out;
+		display: none;
 	}
 
 	.projectLink1:hover{
@@ -323,118 +358,136 @@
 		opacity: 1;
 		cursor:pointer;
 	}
+
+	#projectOverview>div{
+		margin: 10px 0;
+	}
+
+	.selected{
+		background-color: black;
+		color: white;
+	}
+
+	.otherGrid{
+		grid-template-columns: auto auto;
+		}
+
+		#projectFrame{
+			width: 100%;
+		}
+
+	@media only screen and (min-width: 768px) {
+		.otherGrid{
+			grid-template-columns: auto auto auto;
+		}
+
+		.otherGrid>img{
+		height:33vw;
+		width: 33vw;
+		border-radius: 16.5vw;
+		}
+
+		#projectFrame{
+			width: 50%;
+			float: right;
+		}
+
+
+	}
+
 </style>
 
 <body>
 	<div id="container" onmousewheel="scrollFunction()">
 		<div id="wrapper">
-	<div id="titlebar"><div id="title" onclick="scrollDiv('wrapper')">studio<br>&nbsp;&nbsp;&nbsp;jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage0')">see our work</div></div>
+	<div id="titlebar" style="display: none;"><div id="title" onclick="scrollDiv('wrapper')">studio<br>&nbsp;&nbsp;&nbsp;jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage0')">see our work</div></div>
 	
-	<div id="intro" class="page" style="height: 100%"><div style="width: 40%; padding: 450px 0 0 15% ;"><div id="introPara">studio jambhli is a design collective <br>based out of pune, maharashtra that <br>works on projects that are socially relevant.</div><div class="projectLink nextPage " style="text-align: left; margin-left:0; vertical-align: top; display: inline-block;" onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink nextPage " style="text-align: left; margin-left:20px; display: inline-block;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink nextPage " style="text-align: left; margin-left:20px; display: inline-block;  vertical-align: top;" onclick="scrollDiv('contactPage')">contact us</div></div><div style="width: 30%; height: 100%;"><img id="introImage" src="images/tree.png" style="object-fit: contain; width: 130%;"></div></div>
+	<div id="intro" class="page" style=""><div id="title">studio<div style="padding-left:15%;">jambhli</div><div style="width: 85%; padding: 5% 0 0 15% ;"><div id="introPara">studio jambhli is a design collective based out of pune, maharashtra that works on projects that are socially relevant.</div><div style="width: 50%; padding-top: 5vw;"><div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div></div></div><div style="width: 30%; height: 100%; margin-left:-10%; display: none;"><img id="introImage" src="images/tree.png" style="height:100%; width:auto; object-fit: cover;"></div></div>
 	
-	<div id="workPage0" class="page" style="position: relative; ">
-		<div class="heading">what we do</div>
-		
-		<div class="workGrid">	
-			<div class="projectTileCO">
-			<div id="proTile" class="projectTileC">
-				<!-- <div id="proTileNext" class="nextTile" style="right:0px;" onclick="nextTile('proTile')"><img src="next.png" class="nextArrow"></div>
-				<div id="proTilePrev" class="nextTile" style="left:0px; display: none;" onclick="prevTile('proTile')"><img src="next.png" class="nextArrow prevArrow"></div> -->
-				<div class="projectGrid" style="display: inline-grid; width: 600px; height:600px; grid-template-columns: 200px 200px 200px; grid-template-rows: 200px 200px 200px; object-fit: cover;"><img src="images/goa4.jpg" style=""><img src="images/food4.jpg" style=""><img src="images/pashan5.jpg" style=""><img src="images/bapu51.jpg" style=""><img src="images/bali4.jpg" style=""><img src="images/bapu3.jpg" style=""><img src="images/rainbow4.jpg" style=""><img src="images/idc10.jpg" style=""><img src="images/map1.jpg" style=""></div>
-			</div>
+	<div id="workPage0" class="page" style=" ">
+		<div class="heading" style="display: none;">what we do</div>
+		<div id="projectOverview" class="projectPara" style="padding-top:100px;">we work on projects in the areas of <div class="projectLink1" onclick="scrollDiv('workPage1')"><p>education</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink1" onclick="scrollDiv('workPage2')"><p>environmental issues</p><img src="images/feet2.png" style="height: auto; width: 150px;"></div><div class="projectLink1" onclick="scrollDiv('workPage3')"><p>mental health</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink" style="text-decoration: none;" onclick="scrollDiv('workPage4')">and others...<img src="images/feet2.png" style="height: auto; width: 150px;"></div>
+
+		<div id="tagList" style="padding: 10vw; display: none;"><div class="projectLink1" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1" onclick="scrollDiv('workPage1')">environment</div><div class="projectLink1" onclick="scrollDiv('workPage1')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage1')">others projects</div></div>
 		</div>
-			<div class="projectPara" style="position: relative; width:auto; margin-right: -500px;">we work on projects in the areas of <div class="projectLink1" onclick="scrollDiv('workPage1')"><p>education</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink1" onclick="scrollDiv('workPage2')"><p>environmental issues</p><img src="images/feet2.png" style="height: auto; width: 150px;"></div><div class="projectLink1" onclick="scrollDiv('workPage3')"><p>mental health</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink" style="text-decoration: none;" onclick="scrollDiv('workPage4')">and others...<img src="images/feet2.png" style="height: auto; width: 150px;"></div>
+				<!-- <div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img src="images/goa4.jpg" style=""><img src="images/food4.jpg" style=""><img src="images/pashan5.jpg" style=""><img src="images/bapu51.jpg" style=""><img src="images/bali4.jpg" style=""><img src="images/bapu3.jpg" style=""><img src="images/rainbow4.jpg" style=""><img src="images/idc10.jpg" style=""><img src="images/map1.jpg" style=""></div>	 -->
+	</div>
+
+	<!-- <div id="workPage0" class="page" style="position: relative; ">
+		<div class="heading" style="display: none;">what we do</div>
+		<div id="projectOverview" class="projectPara" style="width:auto;">we work on projects in the areas of
 		</div>
-	</div></div>
 
 
-	<div id="workPage1" class="page" style="position: relative; padding-top:220px; ">
-		
-		<div class="workGrid">	
-			<div class="projectTileCO">
-			<div id="eduTile" class="projectTileC">
-				<div id="eduTileNext" class="nextTile" style="right:0px;" onclick="nextTile('eduTile')"><img src="next.png" class="nextArrow"></div>
-				<div id="eduTilePrev" class="nextTile" style="left:0px; display: none;" onclick="prevTile('eduTile')"><img src="next.png" class="nextArrow prevArrow"></div>
-				<div class="projectTile" id="goa" onclick="projectOpen(this.id)"><img src="images/goa4.jpg"><div class ="projectArea">goa biodiversity map<div class ="projectClient">cee goa</div></div></div>
-				<div class="projectTile" id="food" onclick="projectOpen(this.id)" ><img src="images/food4.jpg"><div class ="projectArea">nutrition game kit<div class ="projectClient">bapu trust</div></div></div>
-			</div>
-		</div>
-			<div class="projectPara" style="position: relative;">our interest is in <br><p>education</p> with an emphasis <br>on multilingual approaches...<div style="padding-top: 50px; font-size: 20px;">have a look at some of our projects</div>
+				<div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img src="images/goa4.jpg" style=""><div class="" onclick="scrollDiv('workPage1')">education</div><div class="" onclick="scrollDiv('workPage1')">environmental issues</div><img src="images/pashan5.jpg" style=""><img src="images/bapu3.jpg" style=""><div class="" onclick="scrollDiv('workPage1')">mental health</div><div class="" onclick="scrollDiv('workPage1')">and others...</div><img src="images/map1.jpg" style=""></div>	
+	</div> -->
+
+
+	<div id="workPage1" class="page" style="position: relative;">
+
+			<div class="projectPara" style="position: relative;">our interest is in <p>education</p> with an emphasis on multilingual approaches...<div style="padding-top: 50px; font-size: 20px;">have a look at some of our projects</div>
 				
-			<div id="eduList" style="font-size: 30px; color: lightgrey; z-index: 15;"><div id="goa" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">goa biodiversity map</div><div id="food" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nutrition game kit<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
-			
-			<img class="decor" src="images/animal1.png" style="position: absolute; top:0; left:55px; z-index:5; height:80px; width: auto;">
+			<div id="eduList" style="font-size: 30px; color: lightgrey; z-index: 15; display: none;"><div id="goa" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">goa biodiversity map</div><div id="food" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nutrition game kit<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
 			</div>
-		</div>
-	</div>
 
+			<div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img id="goa" src="images/goa4.jpg" onclick="projectOpen(this.id)"><img id="food" src="images/food4.jpg" onclick="projectOpen(this.id)"></div>
 
-		<div id="workPage2" class="page" style="position: relative; padding-top:220px; ">
-
-		<div class="workGrid" style="flex-direction: row-reverse; position: relative;">
-			<div class="projectTileCO">
-				<div id="envTile" class="projectTileC">
-					<div id="envTileNext" class="nextTile" style="right:0px;" onclick="nextTile('envTile')"><img src="next.png" class="nextArrow"></div>
-				<div id="envTilePrev" class="nextTile" style="left:0px; display: none;" onclick="prevTile('envTile')"><img src="next.png" class="nextArrow prevArrow"></div>
-				<div class="projectTile" id="pashan" onclick="projectOpen(this.id)" ><img src="images/pashan1.jpg"><div class ="projectArea">nature trail activity kit<div class ="projectClient">cee pune</div></div></div>
-				<div class="projectTile" id="water" onclick="projectOpen(this.id)"><img src="images/water1.jpg" onclick="projectOpen(this.id)"><div class ="projectArea">sustainability infographics<div class ="projectClient">studio project</div></div></div>
-			</div>
-		</div>
-			<div class="projectPara"><p>environmental issues</p> ranging from water usage to farming initiatives and biodiversity education...<div style="padding-top: 50px; font-size: 20px;">see our work on the environment</div>
-			<div id="envList" style="font-size: 30px; color: lightgrey; z-index: 15;"><div id="pashan" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nature trail activity kit</div><div id="water" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">sustainability infographics<br><img src="images/feet2.png" style="height: auto; width: 150px; float:right;"></div></div>
-			</div>
-			<img class="decor" src="images/animal5.png" style="position: absolute; bottom:0; left:720px; z-index:5; height:60px; width: auto;">
-		</div>
-	</div>
-
-
-	<div id="workPage3" class="page" style="position: relative; padding-top:220px; ">
-
-		<div class="workGrid">
-			<div class="projectTileCO">
-				<div id="menTile" class="projectTileC">
-					<div id="menTileNext" class="nextTile" style="right:0px;" onclick="nextTile('menTile')"><img src="next.png" class="nextArrow"></div>
-				<div id="menTilePrev" class="nextTile" style="left:0px; display: none;" onclick="prevTile('menTile')"><img src="next.png" class="nextArrow prevArrow"></div>
-				<div class="projectTile" id="rainbow" onclick="projectOpen(this.id)"><img src="images/rainbow1.jpg"><div class ="projectArea">spectrum game<div class ="projectClient">bapu trust</div></div></div>
-				<div class="projectTile" id="bapu" onclick="projectOpen(this.id)"><img src="images/bapu51.jpg"><div class ="projectArea">bapu publications<div class ="projectClient">bapu trust</div></div></div>
-			</div>
-		</div>
-			<div class="projectPara"><p>mental health</p> concerns have been explored over the years with a strong focus towards creating understandable and accessible content.<div style="padding-top: 50px; font-size: 20px;">see our work on the environment</div>
-			<div id="menList" style="font-size: 30px; color: lightgrey; z-index: 15;"><div id="rainbow" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">spectrum game</div><div id="bapu" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">bapu publications<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
-				
-			</div>
-		</div>
-			
-	</div>
-
-	<div id="workPage4" class="page" style="position: relative; padding-top:120px; ">
+			<div id="tagList" style="padding: 10vw;"><div class="projectLink1 selected" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1" onclick="scrollDiv('workPage2')">environment</div><div class="projectLink1" onclick="scrollDiv('workPage3')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage4')">others projects</div></div>	
 		
-		<div class="workGrid" style="flex-direction: row-reverse; position: relative;">	
-			<div class="projectTileCO">
-				<div id="proTile" class="projectTileC">
-					<!-- <div id="proTileNext" class="nextTile" style="right:0px;" onclick="nextTile('proTile')"><img src="next.png" class="nextArrow"></div>
-					<div id="proTilePrev" class="nextTile" style="left:0px; display: none;" onclick="prevTile('proTile')"><img src="next.png" class="nextArrow prevArrow"></div> -->
-					<div class="projectGrid" style="display: inline-grid; width: 600px; height:600px; grid-template-columns: 200px 200px 200px; grid-template-rows: 200px 200px 200px; object-fit: cover;"><img src="images/map1.jpg" style=""><img src="images/bali4.jpg" style=""><img src="images/key0.jpg" style=""><img src="images/bus0.jpg" style=""><img src="images/soppecom0.jpg" style=""><img src="images/vacha0.jpg" style=""><img src="images/idc10.jpg" style=""></div>
-				</div>
+	</div>
+
+	<div id="workPage2" class="page" style="position: relative;">
+
+			<div class="projectPara" style="position: relative;"><p>environmental issues</p> ranging from water usage to farming initiatives and biodiversity education...<div style="padding-top: 50px; font-size: 20px;">see our work on the environment</div>
+				
+			<div id="envList" style="font-size: 30px; color: lightgrey; z-index: 15; display: none;"><div id="pashan" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nature trail activity kit</div><div id="water" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">sustainability infographics<br><img src="images/feet2.png" style="height: auto; width: 150px; float:right;"></div></div>
 			</div>
-				<div class="projectPara"><div style="padding-top: 0px; font-size: 20px;">browse through more of our work...</div>
-			<div id="envList" style="font-size: 30px; color: lightgrey; z-index: 15;"><div id="map" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">pune heritage brochure</div>
+
+			<div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img id="pashan" src="images/pashan5.jpg" onclick="projectOpen(this.id)"><img id="water" src="images/water1.jpg" onclick="projectOpen(this.id)"></div>
+
+			<div id="tagList" style="padding: 10vw;"><div class="projectLink1" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1 selected" onclick="scrollDiv('workPage2')">environment</div><div class="projectLink1" onclick="scrollDiv('workPage3')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage4')">others projects</div></div>	
+		
+	</div>
+
+	<div id="workPage3" class="page" style="position: relative;">
+
+			<div class="projectPara" style="position: relative;"><p>mental health</p> concerns have been explored over the years with a strong focus towards creating understandable and accessible content.<div style="padding-top: 50px; font-size: 20px;">see our work on mental health</div>
+				
+			<div id="menList" style="display: none; font-size: 30px; color: lightgrey; z-index: 15;"><div id="rainbow" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">spectrum game</div><div id="bapu" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">bapu publications<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
+			</div>
+
+			<div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img id="rainbow" src="images/rainbow1.jpg" onclick="projectOpen(this.id)"><img id="bapu" src="images/bapu51.jpg" onclick="projectOpen(this.id)"></div>
+
+			<div id="tagList" style="padding: 10vw;"><div class="projectLink1" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1" onclick="scrollDiv('workPage2')">environment</div><div class="projectLink1 selected" onclick="scrollDiv('workPage3')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage4')">others projects</div></div>	
+		
+	</div>
+
+	<div id="workPage4" class="page" style="position: relative;">
+
+			<div class="projectPara" style="position: relative;"><div style="padding-top: 50px; font-size: 20px;">go through more of our projects in these areas</div></div>
+
+			<div id="tagList" style="padding: 10vw; padding-top: 0;"><div class="projectLink1 selected" onclick="scrollDiv('workPage1')">other projects</div><div class="projectLink1" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1" onclick="scrollDiv('workPage2')">environment</div><div class="projectLink1" onclick="scrollDiv('workPage3')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage4')">heritage</div><div class="projectLink1" onclick="scrollDiv('workPage4')">community</div></div>	
+				
+			<div id="projectList" style="display: none; font-size: 30px; color: lightgrey; z-index: 15;"><div id="map" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">pune heritage brochure</div>
 			<div id="bali" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">bali declaration 2019</div>
 			<div id="key" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">bapu key messages</div>
 			<div id="bus" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">jagruti exhibition bus</div>
 			<div id="soppecom" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">soppecom publications</div>
 			<div id="vacha" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">vacha diary</div>
 			<div id="idc" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">50 years alumni exhibition<br><img src="images/feet2.png" style="height: auto; width: 150px; float:right;"></div></div>
-			</div>
-		</div>
-		<div class="projectLink nextPage " onclick="scrollDiv('aboutPage')">about us<br><img src="images/feet1.png" style="height: 200px; width: auto; margin-bottom:-180px;"></div>
+		
 
+			<div class="projectGrid otherGrid" style="display: inline-grid; width: 100vw; object-fit: cover;"><img id="map" src="images/map1.jpg" onclick="projectOpen(this.id)"><img id="bali" src="images/bali4.jpg" onclick="projectOpen(this.id)"><img id="key" src="images/key0.jpg" onclick="projectOpen(this.id)"><img id="bus" src="images/bus0.jpg" onclick="projectOpen(this.id)"><img id="soppecom" src="images/soppecom0.jpg" onclick="projectOpen(this.id)"><img id="vacha" src="images/vacha0.jpg" onclick="projectOpen(this.id)"><img id="bali" src="images/idc10.jpg" onclick="projectOpen(this.id)"></div>
+
+			<div class="projectLink nextPage " onclick="scrollDiv('aboutPage')">about us<br><img src="images/feet1.png" style="height: 200px; width: auto; margin-bottom:-180px;"></div>
+
+		
 	</div>
 
 
 
 
-		<div id="project" style="width:100%; height:100%; z-index: 5; position: fixed; top:0; bottom:0; right:0; border-width: 0;  background-color: rgba(0,0,0,0.5); display:none;"><iframe id="projectFrame" style="position:relative; left:0%; width: 50%; height: 100%; z-index: 5;" src="goa2.html"></iframe>
+		<div id="project" style="width:100%; height:100%; z-index: 5; position: fixed; top:0; bottom:0; right:0; border-width: 0;  background-color: rgba(0,0,0,0.5); display:none;"><iframe id="projectFrame" style="position:relative; left:0%; height: 100%; z-index: 5;" src="goa2.html"></iframe>
 		<div id="close" style="position: fixed; top:2.5%; right:47.5%; text-align: right; z-index: 10; "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" onclick="projectClose()"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/></svg></div></div>
 			
 
@@ -447,9 +500,9 @@
 	<div id="aboutPage" class="page"><div class="heading" style="position: relative;">who we are<img class="decor" src="images/animal2.png" style="position: absolute; top:100px; left:130px; z-index:5; height:60px; width: auto;"></div>
 	<div id="profileGrid">
 		<div class="profileTile"></div>
-		<div class="profileTile" style="width:550px; margin-right: 250px; margin-bottom: 100px;"><img src="images/profile.jpg"><div class ="profileText">marion jhunja</div>A visual communication design professional of around 30 years, heads studio jambhali. She has been working on education in various aspects, from designing for early education to the creation of easily understandable material in a variety of formats.<br><br>She also teaches design at various colleges.</div>
+		<div class="profileTile" style="width:550px;"><img src="images/profile.jpg"><div class ="profileText">marion jhunja</div>A visual communication design professional of around 30 years, heads studio jambhali. She has been working on education in various aspects, from designing for early education to the creation of easily understandable material in a variety of formats.<br><br>She also teaches design at various colleges.</div>
 		<div class="profileTile"><img src="images/profile1.png"><div class ="profileText">isha sonigra</div>A mainstay at studio jambhali, isha is involved in illustrating and has an instinctive grasp in creating beautiful designed pieces. She is currently working on education material at studio jambhali.</div>
-		<div class="profileTile"><img src="images/profile3.png"><div class ="profileText">shantashree nerekar</div>A recent entrant to the design world and has been a dependable part of the in the mental health projects. She is doing her first year of design at NID.</div>
+		<div class="profileTile"><img src="images/profile3.png"><div class ="profileText">shantashree nerekar</div>A recent entrant to the design world and has been a dependable part of the team in the mental health projects. She is doing her first year of design at NID.</div>
 		<div class="profileTile"><img src="images/profile4.png"><div class ="profileText">namaya manjerakar</div>Namaya worked as an intern at studio jambhali for her final year degree project, developing environment related material for a low education audience. She is based in Mumbai. </div>
 		<div class="profileTile"><img src="images/profile2.png"><div class ="profileText">kuhika shrivastava</div>Kuhika did her internship at studio jambhali, working on the nutrition game set. She is based in Bhopal.</div>
 		<div class="profileTile"><img src="images/profile6.jpg"><div class ="profileText">anjali jhunja</div>A craft based design student, has worked on a variety of the mental health prototypes. She is currently studying at IICD.</div>
@@ -458,7 +511,7 @@
 	<div class="projectLink nextPage " onclick="scrollDiv('contactPage')">contact us<br><img src="images/feet1.png" style="height: 200px; width: auto; margin-bottom:0px;"></div>
 	</div>
 
-	<div id="contactPage" class="page" style="display: flex;"><div style="width: 40%; height: 100%; padding: 0px 0 0 5% ;"><img id="introImage" src="images/tree.png" style="object-fit: contain; width: 100%;"></div><div style="width: 40%; padding:100px 15% 0 0 ;"><div class="heading">get in touch</div><div style="padding: 0 0 30px 10%; font-size: 25px;">Studio Jambhali takes its name from the jambhul, an evergreen fruit tree. It is a fast growing, tall tree, that can live over a century.<br><br>It's dense foliage provides a whole ecosystem to multiple users, and we hope to provide the same in studio jambhali.<div class="projectLink" style="color: lightgrey; margin: 30px 0 ; font-size: 20px; text-decoration: none;">write to us about new projects<br><span class="copy" style="text-decoration: underline;">mjhunja@hotmail.com</span></div><div id="workLink" class="projectLink" style="color: lightgrey; padding:30px 0 50px 0; font-size: 20px;" onclick="function showWork(){document.getElementById('workLink').style.display='none'; document.getElementById('workDetails').style.display='block';} showWork();">interested in working at studio jambhli?</div></div><div id="workDetails" style=" display:none; padding: 0 0 30px 10%; font-size: 22px;">We work with design students and design professionals, from varied backgrounds, each bringing their own special talents to add value in each project.<div class="projectLink" style="color: lightgrey; padding:30px 0 50px 0; font-size: 20px; text-decoration: none;">write in for internships and projects<br><span class="copy" style="text-decoration: underline;">mjhunja@hotmail.com</span></div></div></div>
+	<div id="contactPage" class="page" style="display: flex;"><div style="display: none; width: 40%; height: 100%; padding: 0px 0 0 5% ;"><img id="introImage" src="images/tree.png" style="object-fit: contain; width: 100%;"></div><div style="padding:0 15% 0 0 ;"><div class="heading">get in touch</div><div style="padding: 0 0 30px 10%; font-size: 5vw;">Studio Jambhali takes its name from the jambhul, an evergreen fruit tree. It is a fast growing, tall tree, that can live over a century.<br><br>It's dense foliage provides a whole ecosystem to multiple users, and we hope to provide the same in studio jambhali.<div class="projectLink1" style="display: block; font-size: 20px; color: grey; margin:5vw 0">write to us about new projects<br><span class="copy" style="text-decoration: underline;">mjhunja@hotmail.com</span></div><div id="workLink" class="projectLink1" style="display: block; font-size: 20px; color: grey; margin:5vw 0" onclick="function showWork(){document.getElementById('workLink').style.display='none'; document.getElementById('workDetails').style.display='block';} showWork();">interested in working at studio jambhli?</div></div><div id="workDetails" style=" display:none; padding: 0 0 30px 10%; font-size: 3vw;">We work with design students and design professionals, from varied backgrounds, each bringing their own special talents to add value in each project.<div class="projectLink1" style="display: block; font-size: 20px; color: grey; margin:5vw 0">write in for internships and projects<br><span class="copy" style="text-decoration: underline;">mjhunja@hotmail.com</span></div></div></div>
 	</div>
 	<div style="width:90%; height:30px; background-color: black; padding: 10px 10% 0 0; color: white; text-align: right; font-family: sans-serif;">made in pune, maharashtra</div>
 
@@ -546,11 +599,12 @@
 	     document.getElementById("workButton").style.color="rgba(0,0,0,0.0)";
 	     document.getElementById("aboutButton").style.color="rgba(0,0,0,0.0)";
 	  }
-	}
-	
-	$(document).on('touchmove', function() {
+}
+
+$(document).on('touchmove', function() {
   scrollFunction();
-		document.getElementById("title").innerHTML=document.getElementById("container").scrollTop;
 });
+
+
 </script>
 </html>
