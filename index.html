@@ -82,12 +82,15 @@
 		left:0;
 		right: 0;
 		z-index: 5;
-		padding: 30px 0 10px 0;
-		transition: 0.5s;
+		padding: 2vh 0 12vh 0;
+		background:linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(252,252,250,1) 65%);
 	}
 
-	#titlebar>div{
+	#titleIcon{
 		height: 100%;
+		font-size: 4vh;
+		padding-left:10%;
+		font-family: 'Sora', sans-serif;
 		display: inline-block;
 	}
 
@@ -102,23 +105,48 @@
 		transition: 0.5s;
 	}
 
+	
+
 	.titleButton{
+		height: 100%;
 		padding-top: 20px;
-		width:100px;
 		float: right;
 		text-align: right;
-		margin-right: 50px;
-		transition: 0.5s;
-		color:rgba(0,0,0,0.0);
+		margin-right: 2vw;
+		color:lightgrey;
 		cursor:pointer;
+		display: none;
 	}
+
+	#menuIcon{
+		display: inline-block;
+		float: right;
+		margin-right: 5%;
+	}
+
+	#menuIcon>img{
+			object-fit: scale-down;
+			max-height:3vh;
+			margin-top:1vh;
+		}
+
+		#menu>div>.projectLink1{
+			margin-bottom: 10vw;
+			background-color: #fcfcfa;
+			color:grey;
+		}
+
+		.decor{
+			display: none;
+		}
 
 	.page{
 		width:100%;
 		min-height:100%;
 		background-color: #fcfcfa;
 		z-index: 1;
-		padding-bottom:20vh;
+		padding-bottom:10vh;
+		padding-top:8vh;
 		scroll-snap-align: start;
   		scroll-snap-stop: normal;
 	}
@@ -375,11 +403,30 @@
 			font-size: 16px;
 		}
 
+
+
+
 	@media only screen and (min-width: 600px) and (max-height:1000px) {
+
+	/*	#titlebar{
+		padding: 2vh 0 12vh 0;
+		background:linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(252,252,250,1) 65%);
+		}
+
+		#titleIcon{
+			font-size: 4vh;
+			padding-left:10%;
+		}*/
 
 		#title{
 			font-size:8vw;
 		}
+
+		.titleButton{
+			display: inline-block;
+		}
+
+
 
 		.jambhli{
 			padding-left:5vw;
@@ -454,21 +501,35 @@
 			display: block;
 		}
 
+		#menuIcon{
+		display: none;
+		}
+
+		#menu{
+			display: none;
+		}
 
 	}
+
+	
 
 </style>
 
 <body>
 	<div id="container" onmousewheel="scrollFunction()">
-		<div id="wrapper">
-	<div id="titlebar" style="display: none;"><div id="title" onclick="scrollDiv('wrapper')">studio<br>&nbsp;&nbsp;&nbsp;jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage0')">see our work</div></div>
+		<div id="wrapper" style="position: relative;">
+	<div id="titlebar" style=""><div id="titleIcon" onclick="scrollDiv('wrapper')">studio jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage0')">see our work</div><div id="menuIcon" onclick="clicked(this.id)"><img src="menu.png"></div></div>
+
+	<div id="menu" style="z-index: 4; position:fixed; top:0; right:0; left: 0; background-color: #fcfcfa; display: none;"><div style="padding: 40vw 0 0 10%;"> <div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div><div style="margin-left:-60vw;"><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width: 40vw; "></div></div>
+
 	
-	<div id="intro" class="page" style=""><div id="title">studio<div class="jambhli">jambhli</div><div class="jambhli" style="width: 80%; padding-top: 5%;"><div id="introPara">studio jambhli is a design collective based out of pune, maharashtra that works on projects that are socially relevant.</div><div style="padding-top: 5vw;"><div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div></div></div><div id="introImage" style=""><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width:40vw;"></div></div>
+	<div id="intro" class="page" style="z-index:6; position:absolute; top:0; left:0; right:0; padding-top: 0;"><div id="title">studio<div class="jambhli">jambhli</div><div class="jambhli" style="width: 80%; padding-top: 5%;"><div id="introPara">studio jambhli is a design collective based out of pune, maharashtra that works on projects that are socially relevant.</div><div style="padding-top: 5vw;"><div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div></div></div><div id="introImage" style=""><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width:40vw;"></div></div>
+
+	<div class="page"></div>
 	
 	<div id="workPage0" class="page" style=" ">
 		<div class="heading" style="display: none;">what we do</div>
-		<div id="projectOverview" class="projectPara" style="padding-top:100px;">we work on projects in the areas of <div class="projectLink1" onclick="scrollDiv('workPage1')"><p>education</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink1" onclick="scrollDiv('workPage2')"><p>environmental issues</p><img src="images/feet2.png" style="height: auto; width: 150px;"></div><div class="projectLink1" onclick="scrollDiv('workPage3')"><p>mental health</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink" style="text-decoration: none;" onclick="scrollDiv('workPage4')">and others...<img src="images/feet2.png" style="height: auto; width: 150px;"></div>
+		<div id="projectOverview" class="projectPara" style="padding-top:100px;">we work on projects in the areas of <div class="projectLink1" onclick="scrollDiv('workPage1')"><p>education</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink1" onclick="scrollDiv('workPage2')"><p>environmental issues</p><img src="images/feet2.png" style="height: auto; width: 150px;"></div><div class="projectLink1" onclick="scrollDiv('workPage3')"><p>mental health</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink" style="text-decoration: none;" onclick="scrollDiv('workPage4')">and others...</div>
 
 		<div id="tagList" style="padding: 10vw; display: none;"><div class="projectLink1" onclick="scrollDiv('workPage1')">education</div><div class="projectLink1" onclick="scrollDiv('workPage1')">environment</div><div class="projectLink1" onclick="scrollDiv('workPage1')">mental health</div><div class="projectLink1" onclick="scrollDiv('workPage1')">others projects</div></div>
 		</div>
@@ -602,6 +663,9 @@
                 inline: 'start'
             }); 
 			break;
+			case 'menuIcon':
+				document.getElementById('menu').style.display="flex";
+				break;
 
 		}
 	}
@@ -646,51 +710,8 @@
                 behavior: 'smooth', 
                 inline: 'start'
             }); 
-		//  if(a=='wrapper'){
-		//  	document.getElementById("title").style.marginTop = "100px";
-	 //    document.getElementById("title").style.fontSize = "130px";
-	 //     document.getElementById("titlebar").style.paddingTop = "30px";
-	 //     document.getElementById("titlebar").style.background="";
-	 //     document.getElementById("title").innerHTML="studio<br>&nbsp;&nbsp;&nbsp;jambhli";
-	 //     document.getElementById("contactButton").style.color="rgba(0,0,0,0.0)";
-	 //     document.getElementById("workButton").style.color="rgba(0,0,0,0.0)";
-	 //     document.getElementById("aboutButton").style.color="rgba(0,0,0,0.0)";
-		//  }
-		//  else{
-		// document.getElementById("title").style.fontSize = "35px";
-	 //    document.getElementById("title").style.marginTop = "5px";
-	 //    document.getElementById("titlebar").style.paddingTop = "10px";
-	 //    document.getElementById("titlebar").style.paddingBottom = "30px";
-	 //    document.getElementById("titlebar").style.background="linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(252,252,250,1) 65%)";
-	 //    document.getElementById("title").innerHTML="studio jambhli";
-	 //    document.getElementById("contactButton").style.color="rgba(0,0,0,1.0)";
-	 //    document.getElementById("workButton").style.color="rgba(0,0,0,1.0)";
-	 //    document.getElementById("aboutButton").style.color="rgba(0,0,0,1.0)";
-		// }
+		 document.getElementById('menu').style.display="none";
 	}
-
-	function scrollFunction() {
-	  // if (document.getElementById("container").scrollTop > 50 || document.documentElement.scrollTop > 50) {
-	  //   document.getElementById("title").style.fontSize = "35px";
-	  //   document.getElementById("title").style.marginTop = "5px";
-	  //   document.getElementById("titlebar").style.paddingTop = "10px";
-	  //   document.getElementById("titlebar").style.paddingBottom = "30px";
-	  //   document.getElementById("titlebar").style.background="linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(252,252,250,1) 65%)";
-	  //   document.getElementById("title").innerHTML="studio jambhli";
-	  //   document.getElementById("contactButton").style.color="rgba(0,0,0,1.0)";
-	  //   document.getElementById("workButton").style.color="rgba(0,0,0,1.0)";
-	  //   document.getElementById("aboutButton").style.color="rgba(0,0,0,1.0)";
-	  // } else {
-	  //   document.getElementById("title").style.marginTop = "100px";
-	  //   document.getElementById("title").style.fontSize = "130px";
-	  //    document.getElementById("titlebar").style.paddingTop = "30px";
-	  //    document.getElementById("titlebar").style.background="";
-	  //    document.getElementById("title").innerHTML="studio<br>&nbsp;&nbsp;&nbsp;jambhli";
-	  //    document.getElementById("contactButton").style.color="rgba(0,0,0,0.0)";
-	  //    document.getElementById("workButton").style.color="rgba(0,0,0,0.0)";
-	  //    document.getElementById("aboutButton").style.color="rgba(0,0,0,0.0)";
-	  // }
-}
 
 
 
