@@ -41,7 +41,6 @@ html{
 
 	#workGrid{
 		display: grid;
-		height:550px;
 		padding: 0 10%;
 		grid-gap: 10px;
 		grid-row-gap: 70px;
