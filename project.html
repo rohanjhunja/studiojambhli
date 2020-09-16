@@ -1,0 +1,180 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Sora&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans&family=Sora&display=swap" rel="stylesheet">
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+	html{
+		width:100%; height:100%; 
+		/*background-color: #edeaff;*/
+	}
+	body{
+		background-color: white;
+		margin:0;
+	    padding:0;
+	    height:100%;
+	    width: 100%;
+	    display: block;
+	    font-family: 'Noto Serif', sans-serif;
+	    overflow: hidden;
+
+	    -webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		cursor: default;
+	    /*scroll-snap-type: y mandatory;*/
+	}
+
+	#titlebar{
+		/*background-color: #fafaf8;*/
+		position: fixed;
+		top:0;
+		left:0;
+		right: 0;
+		z-index: 5;
+		padding: 2vh 0 12vh 0;
+		background:linear-gradient(0deg, rgba(255,255,255,0) 10%, rgba(252,252,250,1) 65%);
+	}
+
+	#titleIcon{
+		height: 100%;
+		font-size: 4vh;
+		padding-left:10%;
+		font-family: 'Sora', sans-serif;
+		display: inline-block;
+	}
+
+	.titleButton{
+		height: 100%;
+		padding-top: 20px;
+		float: right;
+		text-align: right;
+		margin-right: 2vw;
+		color:lightgrey;
+		cursor:pointer;
+		display: none;
+	}
+
+	#menuIcon{
+		display: inline-block;
+		float: right;
+		margin-right: 5%;
+	}
+
+	#menuIcon>img{
+			object-fit: scale-down;
+			max-height:3vh;
+			margin-top:1vh;
+		}
+
+		#menu>div>.projectLink1{
+			margin-bottom: 10vw;
+			background-color: #fcfcfa;
+			color:grey;
+		}
+
+	.page{
+		width:100%;
+		min-height:100%;
+		background-color: #fcfcfa;
+		z-index: 1;
+		padding-bottom:10vh;
+		padding-top:8vh;
+		scroll-snap-align: start;
+  		scroll-snap-stop: normal;
+	}
+
+	.nextPage{
+		text-align: center;
+		font-size: 20px;
+		width:auto;
+		margin: 50px auto 0 auto;
+		cursor:pointer;
+		color:lightgrey;
+		text-decoration: none;
+	}
+
+	#projectFrame{
+			width:auto;
+
+
+		}
+
+	.workGrid{
+		display: block;
+	}
+
+	@media only screen and (min-width: 600px) and (max-height:1000px) {
+
+		#title{
+			font-size:8vw;
+		}
+
+		.titleButton{
+			display: inline-block;
+		}
+
+
+		#menuIcon{
+		display: none;
+		}
+
+		#menu{
+			display: none;
+		}
+
+		#projectFrame{
+			width: 100%;
+			margin-left:15vw;
+		}
+	}
+
+
+
+</style>
+
+<body>
+
+	<div id="titlebar" style=""><div id="titleIcon" onclick="clicked('main')">studio jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="clicked('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="clicked('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="clicked('workPage')">see our work</div><div id="menuIcon" onclick="clicked(this.id)"><img src="menu.png"></div></div>
+
+	<div id="menu" style="z-index: 4; position:fixed; top:0; right:0; left: 0; background-color: #fcfcfa; display: none;"><div style="padding: 40vw 0 0 10%;"> <div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="clicked('workPage')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="clicked('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="clicked('contactPage')">get in touch</div></div><div style="margin-left:-60vw;"><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width: 40vw; "></div></div>
+	
+	<iframe id="projectFrame" style="height: 100%; z-index: 5; border:none;"></iframe>
+</body>
+
+<script type="text/javascript">
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const project = urlParams.get('project');
+	document.getElementById("projectFrame").src=project+'.html';
+
+	function clicked(a){
+		switch(a){
+			
+			case 'menuIcon':
+				document.getElementById('menu').style.display="flex";
+				break;
+			case 'main':
+			case 'contactPage':
+			case 'aboutPage':
+			case 'workPage':
+			window.open('studio3.html?page='+a,"_self");
+			break;
+
+		}
+	}
+
+
+
+</script>
+</html>
