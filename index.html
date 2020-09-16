@@ -68,7 +68,7 @@
 		scroll-snap-type: y mandatory;
 	}
 
-	#wrapper{
+	#main{
 		margin:0;
 	    padding:0;
 	    height:100%;
@@ -178,21 +178,6 @@
 		padding: 0 10%;
 		margin-bottom: 120px;
 	}
-
-	
-
-	.projectTileCO{
-		position: relative;
-	}
-
-	.projectTileC{
-		height:600px;
-		width:600px;
-		overflow-x: hidden;
-  		white-space: nowrap;
-  		scroll-behavior: smooth;
-	}
-
 
 	.projectGrid>img{
 		height:50vw;
@@ -516,18 +501,18 @@
 </style>
 
 <body>
-	<div id="container" onmousewheel="scrollFunction()">
-		<div id="wrapper" style="position: relative;">
-	<div id="titlebar" style=""><div id="titleIcon" onclick="scrollDiv('wrapper')">studio jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage0')">see our work</div><div id="menuIcon" onclick="clicked(this.id)"><img src="menu.png"></div></div>
+	<div id="container">
+		<div id="main" style="position: relative;">
+	<div id="titlebar" style=""><div id="titleIcon" onclick="scrollDiv('main')">studio jambhli</div><div id="contactButton" class="titleButton" style="margin-right: 10%;" onclick="scrollDiv('contactPage')">contact us</div><div id="aboutButton"class="titleButton" onclick="scrollDiv('aboutPage')">our team</div><div id="workButton"class="titleButton" onclick="scrollDiv('workPage')">see our work</div><div id="menuIcon" onclick="clicked(this.id)"><img src="menu.png"></div></div>
 
-	<div id="menu" style="z-index: 4; position:fixed; top:0; right:0; left: 0; background-color: #fcfcfa; display: none;"><div style="padding: 40vw 0 0 10%;"> <div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div><div style="margin-left:-60vw;"><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width: 40vw; "></div></div>
+	<div id="menu" style="z-index: 4; position:fixed; top:0; right:0; left: 0; background-color: #fcfcfa; display: none;"><div style="padding: 40vw 0 0 10%;"> <div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div><div style="margin-left:-60vw;"><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width: 40vw; "></div></div>
 
 	
-	<div id="intro" class="page" style="z-index:6; position:absolute; top:0; left:0; right:0; padding-top: 0;"><div id="title">studio<div class="jambhli">jambhli</div><div class="jambhli" style="width: 80%; padding-top: 5%;"><div id="introPara">studio jambhli is a design collective based out of pune, maharashtra that works on projects that are socially relevant.</div><div style="padding-top: 5vw;"><div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage0')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div></div></div><div id="introImage" style=""><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width:40vw;"></div></div>
+	<div id="intro" class="page" style="z-index:6; position:absolute; top:0; left:0; right:0; padding-top: 0;"><div id="title">studio<div class="jambhli">jambhli</div><div class="jambhli" style="width: 80%; padding-top: 5%;"><div id="introPara">studio jambhli is a design collective based out of pune, maharashtra that works on projects that are socially relevant.</div><div style="padding-top: 5vw;"><div class="projectLink1 nextPage " style="text-align: left; margin-left:0; margin-right:20px; vertical-align: top; " onclick="scrollDiv('workPage')">see our work<br><img src="images/feet1.png" style="height: 200px; width: auto;"></div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px;  vertical-align: top;" onclick="scrollDiv('aboutPage')">our team</div><div class="projectLink1 nextPage " style="text-align: left; margin-right:20px; vertical-align: top;" onclick="scrollDiv('contactPage')">get in touch</div></div></div></div><div id="introImage" style=""><img src="images/tree.png" style="object-fit: contain; max-height: 100vh; min-width:40vw;"></div></div>
 
 	<div class="page"></div>
 	
-	<div id="workPage0" class="page" style=" ">
+	<div id="workPage" class="page" style=" ">
 		<div class="heading" style="display: none;">what we do</div>
 		<div id="projectOverview" class="projectPara" style="padding-top:100px;">we work on projects in the areas of <div class="projectLink1" onclick="scrollDiv('workPage1')"><p>education</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink1" onclick="scrollDiv('workPage2')"><p>environmental issues</p><img src="images/feet2.png" style="height: auto; width: 150px;"></div><div class="projectLink1" onclick="scrollDiv('workPage3')"><p>mental health</p><img src="images/feet3.png" style="height: auto; width: 150px; transform: rotate(180deg);"></div><div class="projectLink" style="text-decoration: none;" onclick="scrollDiv('workPage4')">and others...</div>
 
@@ -536,7 +521,7 @@
 				<!-- <div class="projectGrid" style="display: inline-grid; width: 100vw; grid-template-columns: auto auto; object-fit: cover;"><img src="images/goa4.jpg" style=""><img src="images/food4.jpg" style=""><img src="images/pashan5.jpg" style=""><img src="images/bapu51.jpg" style=""><img src="images/bali4.jpg" style=""><img src="images/bapu3.jpg" style=""><img src="images/rainbow4.jpg" style=""><img src="images/idc10.jpg" style=""><img src="images/map1.jpg" style=""></div>	 -->
 	</div>
 
-	<!-- <div id="workPage0" class="page" style="position: relative; ">
+	<!-- <div id="workPage" class="page" style="position: relative; ">
 		<div class="heading" style="display: none;">what we do</div>
 		<div id="projectOverview" class="projectPara" style="width:auto;">we work on projects in the areas of
 		</div>
@@ -646,6 +631,14 @@
 </body>
 <script type="text/javascript">
 
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const page = urlParams.get('page');
+	if(page!=""){
+		scrollDiv(page);
+	}
+	
+
 	function clicked(a){
 		switch(a){
 			case 'mj':
@@ -672,7 +665,9 @@
 
 
 	function projectOpen(e) {
-		window.open(e+'.html',"_blank");
+		// window.open(e+'.html',"_blank");
+		window.open('project.html?project='+e,"_blank");
+
 		// document.getElementById("projectFrame").src=e+'.html';
 		// document.getElementById("projectFrame").onload = function(){
 		
