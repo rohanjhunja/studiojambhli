@@ -73,7 +73,7 @@
 	    height:100%;
 	    width: 100%;
 	    display: block;
-	    font-family: 'Noto Serif', sans-serif;
+	    font-family: 'Sora', sans-serif;
 		overflow-y: scroll;
 		overflow-x:hidden;
 		scroll-snap-type: y proximity;
@@ -196,6 +196,7 @@
 
 	.projectGrid .project{
 		position: relative;
+		cursor: pointer;
 	}
 
 	.projectGrid img{
@@ -220,6 +221,14 @@
 	    border-color: lightgrey;
 	    padding: 2.5vw;
 	}
+
+	.projectGrid :hover .projectName {
+		filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+	}
+
+
+
+
 	.projectGrid .projectClient{
 		padding-top:3vw;
 		font-size: 3vw;
@@ -241,6 +250,11 @@
 		vertical-align: top;
 		
 	}
+	.projectPara>div{
+		font-family: 'Nanum Pen Script', cursive;
+		display: block;
+	}
+
 	.workGrid>div>div>.projectTile>img{
 		object-fit: cover;
 		height: 100%;
@@ -335,9 +349,8 @@
 	}
 
 	.projectLink1{
-		filter: brightness(100%);
 		cursor:pointer;
-		transition: all .5s ease-in-out;
+		transition: all .2s ease-in-out;
 		margin: 5px 5px 5px 0;
 		padding:5px 10px;
 		border:solid;
@@ -359,7 +372,10 @@
 	}
 
 	.projectLink1:hover{
-		filter: brightness(80%);
+		/*filter: drop-shadow(0px 8px 8px lightgrey);*/
+		/*background-color: white;*/
+		border-color: black;
+		filter: brightness(0.5) drop-shadow(0px 8px 8px lightgrey);
 		cursor:pointer;
 	}
 
@@ -369,7 +385,7 @@
 	}
 
 	#projectOverview>div{
-		margin: 10px;
+		margin: 1vw 0;
 	}
 
 	.selected{
@@ -454,7 +470,7 @@
 		}
 
 		.projectPara{
-			font-size:3vw;
+			font-size:2vw;
 			padding-right:30vw;
 		}
 
@@ -580,7 +596,7 @@
 
 	<div id="workPage1" class="page" style="position: relative;">
 
-			<div class="projectPara" style="position: relative;">our interest is in <p>education</p> with an emphasis on multilingual approaches...<div style="padding-top: 50px; font-size: 20px;">have a look at some of our projects</div>
+			<div class="projectPara" style="position: relative;">our interest is in <p>education</p> with an emphasis on multilingual approaches...<div style="padding-top: 50px;">have a look at some of our projects</div>
 				
 			<div id="eduList" style="font-size: 30px; color: #bdbdbd; z-index: 15; display: none;"><div id="goa" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">goa biodiversity map</div><div id="food" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nutrition game kit<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
 			</div>
@@ -593,7 +609,7 @@
 
 	<div id="workPage2" class="page" style="position: relative;">
 
-			<div class="projectPara" style="position: relative;"><p>environmental issues</p> ranging from water usage to farming initiatives and biodiversity education...<div style="padding-top: 50px; font-size: 20px;">see our work on the environment</div>
+			<div class="projectPara" style="position: relative;"><p>environmental issues</p> ranging from water usage to farming initiatives and biodiversity education...<div style="padding-top: 50px;">see our work on the environment</div>
 				
 			<div id="envList" style="font-size: 30px; color: #bdbdbd; z-index: 15; display: none;"><div id="pashan" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">nature trail activity kit</div><div id="water" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">sustainability infographics<br><img src="images/feet2.png" style="height: auto; width: 150px; float:right;"></div></div>
 			</div>
@@ -606,7 +622,7 @@
 
 	<div id="workPage3" class="page" style="position: relative;">
 
-			<div class="projectPara" style="position: relative;"><p>mental health</p> concerns have been explored over the years with a strong focus towards creating understandable and accessible content.<div style="padding-top: 50px; font-size: 20px;">see our work on mental health</div>
+			<div class="projectPara" style="position: relative;"><p>mental health</p> concerns have been explored over the years with a strong focus towards creating understandable and accessible content.<div style="padding-top: 50px;">see our work on mental health</div>
 				
 			<div id="menList" style="display: none; font-size: 30px; color: #bdbdbd; z-index: 15;"><div id="rainbow" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">spectrum game</div><div id="bapu" class="projectLink" style="margin-top:40px" onclick="projectOpen(this.id)">bapu publications<br><img src="images/feet3.png" style="height: auto; width: 150px;"></div></div>
 			</div>
@@ -659,7 +675,7 @@
 		<div id="nmI" class="profileTile"><img src="images/profile4.png"><div class ="profileText">namaya manjerakar</div><div class="projectLink1 read" id="nm" onclick="clicked(this.id)">more on namaya</div><div id="nmT" class="profileBody"> Namaya worked as an intern at studio jambhali for her final year degree project, developing environment related material for a low education audience. She is based in Mumbai.</div> </div>
 		<div id="ksI" class="profileTile"><img src="images/profile2.png"><div class ="profileText">kuhika shrivastava</div><div class="projectLink1 read" id="ks" onclick="clicked(this.id)">more on kuhika</div><div id="ksT" class="profileBody"> Kuhika did her internship at studio jambhali, working on the nutrition game set. She is based in Bhopal.</div></div>
 		<div id="ajI" class="profileTile"><img src="images/profile6.jpg"><div class ="profileText">anjali jhunja</div><div class="projectLink1 read" id="aj" onclick="clicked(this.id)">more on anjali</div><div id="ajT" class="profileBody"> A craft based design student, has worked on a variety of the mental health prototypes. She is currently studying at IICD.</div></div>
-		<div id="rjI" class="profileTile"><img src="images/profile5.jpg"><div class ="profileText">rohan jhunja</div><div class="projectLink1 read" id="rj" onclick="clicked(this.id)">more on rohan</div><div id="rjT" class="profileBody"> An interaction designer from IIT Bombay, working in the space of UI and UX. He has been instrumental in putting together the website for studio jambhali.</div></div>
+		<div id="rjI" class="profileTile"><img src="images/profile8.png"><div class ="profileText">rohan jhunja</div><div class="projectLink1 read" id="rj" onclick="clicked(this.id)">more on rohan</div><div id="rjT" class="profileBody"> An interaction designer from IIT Bombay, working in the space of UI and UX. He has been instrumental in putting together the website for studio jambhali.</div></div>
 	</div>
 	</div>
 
